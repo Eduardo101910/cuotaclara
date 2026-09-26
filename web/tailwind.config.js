@@ -10,6 +10,11 @@ module.exports = {
         navy: "#1F3864",
         teal: "#0F766E",
       },
+      fontFamily: {
+        // Tipografía corporativa y formal
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        display: ['Arial Black', 'Impact', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [],
