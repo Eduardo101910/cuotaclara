@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 export function Topbar() {
   const pathname = usePathname();
 
-  let titulo = "Panel de Control";
+    let titulo = "Panel de Control";
   if (pathname.includes("/simular")) titulo = "Simulador";
+  if (pathname.includes("/dashboard/cronograma")) titulo = "Cronograma de Pagos";
+  if (pathname.includes("/dashboard/prestamo")) titulo = "Detalle del Préstamo";
 
   return (
     <header className="h-20 bg-white/90 backdrop-blur border-b border-slate-200/70 flex items-center justify-between px-6 lg:px-8 shrink-0 sticky top-0 z-30">

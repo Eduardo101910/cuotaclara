@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BtnArrow from "@/components/BtnArrow";
 
 const features = [
   {
@@ -59,17 +60,11 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-          <Link
-            href="/simular"
-            className="inline-flex items-center justify-center gap-2 bg-white text-navy font-bold px-9 py-4 rounded-full shadow-xl shadow-black/30 hover:bg-slate-100 active:scale-[0.98] transition-all text-base"
-          >
+          <Link href="/simular" className="btn-light">
             Simular ahora
-            <span>→</span>
+            <BtnArrow />
           </Link>
-          <Link
-            href="/login"
-            className="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-semibold px-9 py-4 rounded-full border border-white/20 hover:bg-white/20 active:scale-[0.98] transition-all text-base backdrop-blur-sm"
-          >
+          <Link href="/login" className="btn-glass">
             Ya tengo cuenta
           </Link>
         </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SimulacionInput } from "@/lib/motor";
+import BtnArrow from "@/components/BtnArrow";
 
 interface Props {
   onSimular: (input: SimulacionInput) => void;
@@ -136,8 +137,9 @@ export default function FormularioSimulacion({ onSimular }: Props) {
           </div>
         </div>
 
-        <button type="submit" className="w-full bg-navy text-white font-extrabold uppercase tracking-wider py-4 rounded-xl hover:bg-navy/90 active:scale-[0.98] transition-all shadow-md text-sm mt-4">
+        <button type="submit" className="btn-primary w-full mt-4">
           Calcular Préstamo
+          <BtnArrow />
         </button>
       </div>
     </form>

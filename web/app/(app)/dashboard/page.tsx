@@ -173,15 +173,13 @@ export default function DashboardPage() {
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-slate-100 flex justify-between items-center">
           <h3 className="font-bold text-navy text-lg">Tus Préstamos Activos</h3>
-          <Link href="/simular" className="text-sm font-bold text-teal hover:underline">+ Nuevo</Link>
         </div>
         
         {prestamos.length === 0 ? (
           <div className="p-12 text-center flex flex-col items-center justify-center">
             <span className="text-5xl mb-4">📭</span>
             <h2 className="text-xl font-bold text-navy mb-2">No tienes préstamos activos</h2>
-            <p className="text-slate-500 mb-6 max-w-sm">Comienza simulando un préstamo para ver tu cronograma aquí.</p>
-            <Link href="/simular" className="btn-primary">Simular mi primer préstamo</Link>
+            <p className="text-slate-500 max-w-sm">Aún no hay información de préstamos para mostrar aquí.</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -222,7 +220,7 @@ export default function DashboardPage() {
                         )}
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <Link href={`/dashboard/prestamo/${p.id}`} className="text-teal font-bold hover:underline text-xs uppercase tracking-wide">
+                        <Link href={`/dashboard/prestamo/${p.id}`} className="btn-soft btn-sm">
                           Ver detalle
                         </Link>
                       </td>

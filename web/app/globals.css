@@ -18,10 +18,83 @@ body {
   @apply w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 placeholder:text-slate-400 transition-all focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent bg-white;
 }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 bg-navy text-white font-bold px-6 py-3.5 rounded-xl shadow-sm hover:bg-navy/90 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed;
-}
-
 .card {
   @apply bg-white rounded-2xl border border-slate-200/60 shadow-sm;
+}
+
+/* ═══════════ Sistema de botones ═══════════
+   Compactos para teléfono (text-sm, py-2.5) y un poco más grandes desde `sm`.
+   Al estar en @layer components, cualquier clase de Tailwind (w-full, mt-2...) los puede ajustar. */
+@layer components {
+  .btn-primary,
+  .btn-navy,
+  .btn-secondary,
+  .btn-soft,
+  .btn-light,
+  .btn-glass,
+  .btn-soft-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-bold whitespace-nowrap
+      text-sm px-5 py-2.5 sm:text-[15px] sm:px-6 sm:py-3
+      transition-all duration-200 active:scale-[0.97]
+      focus-visible:outline-none focus-visible:ring-4
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  /* Principal: teal sólido (como "Ingresar al portal" de MedCare) */
+  .btn-primary {
+    @apply bg-teal text-white shadow-md shadow-teal/25 hover:bg-teal/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal/30 focus-visible:ring-teal/25;
+  }
+
+  /* Navy sólido */
+  .btn-navy {
+    @apply bg-navy text-white shadow-md shadow-navy/25 hover:bg-navy/90 hover:-translate-y-0.5 focus-visible:ring-navy/25;
+  }
+
+  /* Secundario sobre fondo claro: blanco con borde y sombra */
+  .btn-secondary {
+    @apply bg-white text-navy border border-slate-200 shadow-sm hover:bg-slate-50 hover:border-slate-300 focus-visible:ring-navy/15;
+  }
+
+  /* Suave: teal translúcido, ideal dentro de tablas */
+  .btn-soft {
+    @apply bg-teal/10 text-teal border border-teal/15 hover:bg-teal/15 focus-visible:ring-teal/20;
+  }
+
+  /* Sobre fondo oscuro (navy): blanco sólido */
+  .btn-light {
+    @apply bg-white text-navy shadow-xl shadow-black/25 hover:bg-slate-100 hover:-translate-y-0.5 focus-visible:ring-white/30;
+  }
+
+  /* Sobre fondo oscuro: cristal translúcido */
+  .btn-glass {
+    @apply bg-white/10 text-white border border-white/25 backdrop-blur-sm hover:bg-white/20 focus-visible:ring-white/25;
+  }
+
+  /* Acciones destructivas suaves (cerrar sesión) */
+  .btn-soft-danger {
+    @apply bg-red-50 text-red-600 border border-red-100 hover:bg-red-100 focus-visible:ring-red-200;
+  }
+
+  /* Tamaño pequeño (tablas, encabezados) */
+  .btn-sm {
+    @apply text-xs px-4 py-2 sm:text-[13px] sm:px-4 sm:py-2;
+  }
+
+  /* Círculo con flecha dentro del botón */
+  .btn-icon {
+    @apply flex items-center justify-center w-6 h-6 rounded-full bg-white/20 shrink-0 transition-transform duration-200;
+  }
+  .btn-sm .btn-icon {
+    @apply w-5 h-5;
+  }
+  .btn-light .btn-icon,
+  .btn-secondary .btn-icon {
+    @apply bg-navy/10;
+  }
+  .btn-primary:hover .btn-icon,
+  .btn-navy:hover .btn-icon,
+  .btn-light:hover .btn-icon,
+  .btn-secondary:hover .btn-icon {
+    @apply translate-x-0.5;
+  }
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BtnArrow from "@/components/BtnArrow";
 import { supabase } from "@/lib/supabase/client";
 
 export default function RecuperarPage() {
@@ -29,6 +30,7 @@ export default function RecuperarPage() {
 
   return (
     <main className="min-h-screen flex bg-slate-50 font-sans">
+      {/* --- PANEL IZQUIERDO: BRANDING --- */}
       <div className="hidden lg:flex lg:w-1/2 bg-navy text-white flex-col justify-between p-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal/20 rounded-full blur-[100px] -z-0" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] -z-0" />
@@ -56,6 +58,7 @@ export default function RecuperarPage() {
         <p className="text-xs text-slate-400 relative z-10 font-medium">© 2024 CuotaClara. Todos los derechos reservados.</p>
       </div>
 
+      {/* --- PANEL DERECHO: FORMULARIO --- */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 bg-gradient-to-br from-sky-50 to-white relative">
         <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-10 relative z-10">
           <div className="lg:hidden mb-8 text-center">
@@ -109,7 +112,7 @@ export default function RecuperarPage() {
                   </div>
                 )}
 
-                <button type="submit" disabled={cargando} className="w-full bg-navy text-white font-extrabold uppercase tracking-wider py-4 rounded-xl hover:bg-navy/90 active:scale-[0.98] transition-all shadow-md text-sm mt-2 disabled:opacity-50">
+                <button type="submit" disabled={cargando} className="btn-primary w-full mt-2">
                   {cargando ? "Enviando..." : "Enviar enlace de recuperación"}
                 </button>
               </form>

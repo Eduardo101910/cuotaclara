@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BtnArrow from "@/components/BtnArrow";
 import { supabase } from "@/lib/supabase/client";
 
 export default function RestablecerPage() {
@@ -110,7 +111,7 @@ function RestablecerForm() {
               <p className="text-slate-500 text-sm font-medium mb-8">
                 Este enlace de recuperación ya no es válido. Solicita uno nuevo para continuar.
               </p>
-              <Link href="/recuperar" className="btn-primary">Solicitar nuevo enlace</Link>
+              <Link href="/recuperar" className="btn-primary">Solicitar nuevo enlace<BtnArrow /></Link>
             </div>
           ) : listo ? (
             <div className="text-center">
@@ -119,7 +120,7 @@ function RestablecerForm() {
               </div>
               <h1 className="text-2xl font-extrabold text-navy uppercase tracking-tight mb-2">Contraseña actualizada</h1>
               <p className="text-slate-500 text-sm font-medium mb-8">Ya puedes iniciar sesión con tu nueva contraseña.</p>
-              <Link href="/login" className="btn-primary">Ir a iniciar sesión</Link>
+              <Link href="/login" className="btn-primary">Ir a iniciar sesión<BtnArrow /></Link>
             </div>
           ) : (
             <>
@@ -175,7 +176,7 @@ function RestablecerForm() {
                 <button
                   type="submit"
                   disabled={cargando || !sesionLista}
-                  className="w-full bg-navy text-white font-extrabold uppercase tracking-wider py-4 rounded-xl hover:bg-navy/90 active:scale-[0.98] transition-all shadow-md text-sm mt-2 disabled:opacity-50"
+                  className="btn-primary w-full mt-2"
                 >
                   {cargando ? "Guardando..." : "Guardar nueva contraseña"}
                 </button>
